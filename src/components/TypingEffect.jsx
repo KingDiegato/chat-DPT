@@ -26,6 +26,10 @@ const useTypingEffect = ({ text }) => {
 
       setDisplayText(text.slice(0, nextIndex))
       setCurrentIndex(currentIndex + 1)
+
+      if (currentIndex === text.length) {
+        setCurrentIndex(text.length)
+      }
     }, randomTime)
 
     return () => clearInterval(intervalId)
